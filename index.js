@@ -1,11 +1,12 @@
 for(let i=0 ; i<document.querySelectorAll(".set button").length ; i++){
     document.querySelectorAll(".set button")[i].addEventListener("click",function(){
-    makeSound(key);        
+        let buttonInnerHTML = this.innerHTML;
+    makeSound(buttonInnerHTML);
         
     });
 }
 
-document.addEventListener("keypress",function(event){
+document.addEventListener("keydown",function(event){
     makeSound(event.key)
     console.log(event)
 });
